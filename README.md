@@ -45,6 +45,10 @@ Hides OneDrive, Dropbox, and other cloud storage folders from the Explorer sideb
 
 **[Download Latest Release](https://github.com/Kepners/clean-explorer/releases/latest)** ⬅️ Get the ZIP here
 
+**Two editions available:**
+- 🎒 **Portable Edition** - Single file, interactive menu, runs from USB/cloud folders ([Guide](README-PORTABLE.md))
+- 📦 **Standard Edition** - Traditional batch + reg files, simple and fast
+
 Or clone the repo:
 ```bash
 git clone https://github.com/Kepners/clean-explorer.git
