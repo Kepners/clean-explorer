@@ -41,10 +41,19 @@ Hides OneDrive, Dropbox, and other cloud storage folders from the Explorer sideb
 
 ## Quick Start
 
+### 📥 Download
+
+**[Download Latest Release](https://github.com/Kepners/clean-explorer/releases/latest)** ⬅️ Get the ZIP here
+
+Or clone the repo:
+```bash
+git clone https://github.com/Kepners/clean-explorer.git
+```
+
 ### Hide Cloud Drives
 
 **Option 1: One-Click Script (Recommended)**
-1. Download and extract this repo
+1. Extract the downloaded ZIP
 2. Double-click `Hide-CloudDrives.bat`
 3. Done! Cloud drives hidden from sidebar
 
