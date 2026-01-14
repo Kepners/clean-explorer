@@ -1,10 +1,33 @@
 # Clean Explorer
 
+[![Release](https://img.shields.io/github/v/release/Kepners/clean-explorer?style=flat-square)](https://github.com/Kepners/clean-explorer/releases)
+[![License](https://img.shields.io/github/license/Kepners/clean-explorer?style=flat-square)](LICENSE)
+[![Platform](https://img.shields.io/badge/platform-Windows%2010%20%7C%2011-blue?style=flat-square)]()
+
 **Remove cloud drive clutter from Windows File Explorer sidebar with one click.**
 
 Hides OneDrive, Dropbox, and other cloud storage folders from the Explorer sidebar without uninstalling or stopping sync. Everything still works - just cleaner.
 
-![Before/After comparison]
+<table>
+<tr>
+<td width="50%">
+
+### Before 😤
+![Cluttered Explorer with OneDrive and Dropbox](docs/images/before.png)
+*Sidebar cluttered with cloud services*
+
+</td>
+<td width="50%">
+
+### After ✨
+![Clean Explorer without cloud clutter](docs/images/after.png)
+*Clean, distraction-free sidebar*
+
+</td>
+</tr>
+</table>
+
+> 📸 **Screenshots coming soon!** See [docs/SCREENSHOT_GUIDE.md](docs/SCREENSHOT_GUIDE.md) to help contribute.
 
 ## Features
 

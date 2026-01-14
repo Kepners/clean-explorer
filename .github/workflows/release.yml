@@ -1,0 +1,69 @@
+name: Create Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Create Release ZIP
+      run: |
+        $version = "${{ github.ref_name }}"
+        $zipName = "CleanExplorer-$version.zip"
+
+        # Create distribution folder
+        New-Item -ItemType Directory -Force -Path dist
+
+        # Copy release files
+        Copy-Item Hide-CloudDrives.bat dist/
+        Copy-Item Show-CloudDrives.bat dist/
+        Copy-Item hide-onedrive.reg dist/
+        Copy-Item show-onedrive.reg dist/
+        Copy-Item Remove-Dropbox.ps1 dist/
+        Copy-Item Restore-Dropbox.ps1 dist/
+        Copy-Item README.md dist/
+        Copy-Item LICENSE dist/
+
+        # Create ZIP
+        Compress-Archive -Path dist/* -DestinationPath $zipName
+
+        echo "ZIP_NAME=$zipName" >> $env:GITHUB_ENV
+      shell: pwsh
+
+    - name: Create Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: CleanExplorer-*.zip
+        body: |
+          ## Clean Explorer ${{ github.ref_name }}
+
+          Remove OneDrive and Dropbox from Windows Explorer sidebar with one click.
+
+          ### Quick Start
+          1. Download `CleanExplorer-${{ github.ref_name }}.zip`
+          2. Extract anywhere
+          3. Run `Hide-CloudDrives.bat` to hide cloud drives
+          4. Run `Show-CloudDrives.bat` to restore them
+
+          ### What's Included
+          - ✅ One-click hide script
+          - ✅ One-click restore script
+          - ✅ Manual registry files (advanced users)
+          - ✅ Full documentation
+
+          ### Requirements
+          - Windows 10 or Windows 11
+          - OneDrive/Dropbox installed
+
+          **No admin rights required!**
+        draft: false
+        prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
