@@ -28,7 +28,11 @@ jobs:
         Copy-Item show-onedrive.reg dist/
         Copy-Item Remove-Dropbox.ps1 dist/
         Copy-Item Restore-Dropbox.ps1 dist/
+        Copy-Item CleanExplorer-Portable.ps1 dist/
+        Copy-Item CleanExplorer-Portable.bat dist/
         Copy-Item README.md dist/
+        Copy-Item README-PORTABLE.md dist/
+        Copy-Item INSTALL.md dist/
         Copy-Item LICENSE dist/
 
         # Create ZIP
